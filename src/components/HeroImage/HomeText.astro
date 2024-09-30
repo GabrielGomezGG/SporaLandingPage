@@ -1,0 +1,58 @@
+---
+const { title, text, textButton } = Astro.props;
+const primaryColor = "#F58C0A"
+const primary30 = "#995900"
+const primary20 = "#663B00"
+const primary10 = "#442801"
+---
+<div class="homeText">
+    <h1>{title}</h1>
+    <p>{text}</p>
+    <button type="button">{textButton}</button>
+</div>
+<style define:vars={{primaryColor, primary30, primary20, primary10}}>
+
+    .homeText {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        /* height: 100vh; */
+        background-color: #ffeacc;
+        padding-left: 80px;
+        padding-right: 80px;
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--primary10);
+            text-align: center;
+        }
+
+        p {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary10);
+            text-align: center;
+        }
+
+        button {
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            background-color: var(--primaryColor);
+            color: white;
+            border: none;
+            border-radius: 0.25rem;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: var(--primary30);
+        }
+
+        button:active {
+            background-color: var(--primary30);
+        }
+    }
+</style>

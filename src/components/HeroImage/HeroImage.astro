@@ -1,0 +1,45 @@
+---
+import { Image } from 'astro:assets';
+import SporaHero  from '../../assets/images/spora_hero.png'
+import HomeText from './HomeText.astro';
+
+const { title, text, textButton } = Astro.props;
+
+---
+<div class="hero_image">
+    
+    <HomeText 
+		title = {title},
+		text = {text},
+		textButton = {textButton}
+	/>
+    
+    <Image src={SporaHero} alt="Spora Hero." class='spora_hero'/>
+    
+</div>
+
+<style>
+    .spora_hero {
+        width: 100%;
+        height: 700px;
+    }
+    .hero_image{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        align-items: center;
+        justify-items: end;
+        /* height: 100vh; */
+    }
+
+    @media only screen and (max-width: 768px) {
+    .spora_hero {
+        display: none; /* Oculta el div cuando el ancho de la pantalla es igual o menor a 768px */
+    }
+    .hero_image{
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+        height: 100vh;
+    }
+}
+</style>

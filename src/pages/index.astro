@@ -1,8 +1,20 @@
 ---
 import '../styles/global.css';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroImage from '../components/HeroImage/HeroImage.astro';
 const pageTitle = "Página de inicio";
+
+const homeText = {
+	title: "¡Comenzá tu aventura ahora!",
+	text: "Jugá, aprendé y conocé más sobre los riesgos de la contaminación y las diferentes maneras de cuidar el medio ambiente..",
+	textButton: "Descargar"
+}
+
 ---
 <BaseLayout pageTitle={pageTitle}>
-	<h2>Mi impresionante subtítulo del blog</h2>
+	<HeroImage 
+		title = {homeText.title},
+		text = {homeText.text},
+		textButton = {homeText.textButton}
+	/>
 </BaseLayout>

@@ -1,5 +1,16 @@
-/* estilos de la barra de navegación*/
-.hamburger {
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  /* min-height: 100vh; */
+  background-color: #ffeacc;
+}
+
+
+/* .hamburger {
   padding-right: 20px;
   cursor: pointer;
 }
@@ -10,9 +21,9 @@
   height: 5px;
   margin-bottom: 10px;
   background-color: #ff9776;
-}
+} */
 
-.nav-links {
+/* .nav-links {
   width: 100%;
   top: 5rem;
   left: 48px;
@@ -33,13 +44,13 @@
 
 .nav-links a:hover, a:focus {
   background-color: #ff9776;
-}
+} */
 
-.expanded {
+/* .expanded {
   display: unset;
-}
+} */
 
-@media screen and (min-width: 636px) {
+/* @media screen and (min-width: 636px) {
   .nav-links {
     margin-left: 5em;
     display: block;
@@ -56,4 +67,4 @@
   .hamburger {
     display: none;
   }
-}
+} */

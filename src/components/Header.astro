@@ -1,10 +1,23 @@
 ---
-import Hamburger from './Hamburger.astro';
 import Navigation from './Navigation.astro';
+import SporaLogo from './SporaLogo.astro';
 ---
 <header>
-  <nav>
-    <Hamburger />
+  <nav class="header">
+    <SporaLogo />
     <Navigation />
   </nav>
 </header>
+
+<style>
+    .header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /* padding: 1rem 2rem; */
+        background-color: #2c2c2c;
+        color: white;
+        height: 60px;
+        padding: 20px;
+    }
+</style>
