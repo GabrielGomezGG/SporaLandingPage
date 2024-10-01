@@ -1,4 +1,6 @@
 ---
+import SocialLogos from './SocialLogos.astro';
+
 const { title, text, textButton } = Astro.props;
 const primaryColor = "#F58C0A"
 const primary30 = "#995900"
@@ -9,6 +11,10 @@ const primary10 = "#442801"
     <h1>{title}</h1>
     <p>{text}</p>
     <button type="button">{textButton}</button>
+    <h2>Seguinos en</h2>
+    <div class="icons">
+        <SocialLogos>
+    </div>
 </div>
 <style define:vars={{primaryColor, primary30, primary20, primary10}}>
 
@@ -24,8 +30,15 @@ const primary10 = "#442801"
         padding-right: 80px;
 
         h1 {
-            font-size: 3rem;
+            font-size: 6rem;
             margin-bottom: 1rem;
+            color: var(--primary10);
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-top: 5rem;
             color: var(--primary10);
             text-align: center;
         }
@@ -38,12 +51,13 @@ const primary10 = "#442801"
         }
 
         button {
-            padding: 0.5rem 1rem;
-            font-size: 1rem;
+            margin-top: 4rem;
+            padding: 1.2rem 4rem;
+            font-size: 2rem;
             background-color: var(--primaryColor);
             color: white;
             border: none;
-            border-radius: 0.25rem;
+            border-radius: 1rem;
             cursor: pointer;
         }
 
@@ -54,5 +68,6 @@ const primary10 = "#442801"
         button:active {
             background-color: var(--primary30);
         }
+        
     }
 </style>

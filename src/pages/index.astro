@@ -6,15 +6,32 @@ const pageTitle = "Página de inicio";
 
 const homeText = {
 	title: "¡Comenzá tu aventura ahora!",
-	text: "Jugá, aprendé y conocé más sobre los riesgos de la contaminación y las diferentes maneras de cuidar el medio ambiente..",
-	textButton: "Descargar"
+	text: "Jugá, aprendé y conocé más sobre los riesgos de la contaminación y las diferentes maneras de cuidar el medio ambiente.",
+	textButton: "Descargalo ahora"
 }
 
 ---
 <BaseLayout pageTitle={pageTitle}>
-	<HeroImage 
-		title = {homeText.title},
-		text = {homeText.text},
-		textButton = {homeText.textButton}
-	/>
+	<div class="parent">
+		<div class="child">
+			<HeroImage 
+			title = {homeText.title},
+			text = {homeText.text},
+			textButton = {homeText.textButton}
+			/>
+		</div>
+		
+	  <div class="child">and</div>
+		
+	  <div class="child">
+		<div>
+		  <code>scroll-snap-align</code><br />
+		  on its child elements
+		</div>
+	  </div>
+		
+	  <div class="child">to get a really cool snapping effect - with CSS only!</div>
+		
+	  <div class="child">(works even in the IE!)</div>
+	</div>
 </BaseLayout>
