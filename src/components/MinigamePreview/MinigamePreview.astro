@@ -8,26 +8,21 @@ const { title, text} = Astro.props;
 
 ---
 <div class="section_two">
-    
-	<!-- <div class="images_section_two"> -->
-		<Image src={MinigameDevice} alt="Preview Image" class='minigame_preview_img'/>
-		<!-- <Image src={BackgroundImage} alt="Background Image" class='background_img'/> -->
-	<!-- </div> -->
-
-    <PreviewText
+	
+	<Image src={MinigameDevice} alt="Preview Image" class='minigame_preview_img'/>
+	<PreviewText
 		title = {title},
 		text = {text}
 	/>
-    
 </div>
 
 <style>
 	.section_two {
 		height: 100vh;
 		display: grid;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: 1fr 2fr;
 		align-items: center;
-		padding: 0px 80px;
+		padding: 0px 120px;
 	}
 	
 	.minigame_preview_img{
@@ -53,11 +48,9 @@ const { title, text} = Astro.props;
 
 	@media screen and (max-width: 636px) {
 		.section_two{
-			display: grid;
-			grid-template-columns: 1fr;
-			align-items: center;
-			padding: 0 20px;
-			background-size: cover;
+			display: flex;;
+			flex-direction: column-reverse;
 		}
+
 	}
 </style>

@@ -6,7 +6,7 @@ import PreviewText from '../MinigamePreview/PreviewText.astro';
 const { title, text} = Astro.props;
 
 ---
-<div class="challenge_image">
+<div class="section_three">
 
     <PreviewText
 		title = {title},
@@ -16,3 +16,26 @@ const { title, text} = Astro.props;
 	<Image src={ChallengeDevice} alt="Preview Image" class='challenge_preview'/>
     
 </div>
+
+<style>
+	.section_three{
+		height: 100vh;
+		display: grid;
+		grid-template-columns: 2fr 1fr;
+		align-items: center;
+		padding: 0px 120px;
+	}
+
+	.challenge_preview{
+		width: 300px;
+		height: 600px;
+
+	}
+	@media screen and (max-width: 636px) {
+		.section_three{
+			display: flex;
+			flex-direction: column;
+		}
+
+	}
+</style>
