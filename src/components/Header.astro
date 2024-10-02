@@ -1,12 +1,21 @@
 ---
-import Navigation from './Navigation.astro';
-import SporaLogo from './SporaLogo.astro';
+import Navigation from "./Navigation.astro";
+import SporaLogo from "./SporaLogo.astro";
 ---
+
 <header class="topbar">
-  <div class="logo">
-    <SporaLogo />
-  </div>
-  <nav>
-    <Navigation />
-  </nav>
+  <SporaLogo />
+  <Navigation />
 </header>
+
+<style>
+    .topbar {
+        height: 60px; /* Adjust to the actual height of your top bar */
+        background-color: #333;
+        color: white;
+        display: flex;
+        justify-content: space-between; /* Logo on the left, navigation on the right */
+        align-items: center; /* Center vertically */
+        padding: 0 20px;
+    }
+</style>
