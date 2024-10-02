@@ -1,0 +1,23 @@
+---
+import { Image } from 'astro:assets';
+import Instagram  from '../../assets/images/instagram_icon.webp'
+import X_Twitter  from '../../assets/images/twitter_x_icon.png'
+---
+
+<div class="icons">
+    <a href="https://www.instagram.com/proyecto.spora/"><Image src={Instagram} alt="Instagram Logo" class='social_icons'/></a>
+    <Image src={X_Twitter} alt="X-Twitter Logo" class='social_icons'/>
+</div>
+
+<style>
+    .icons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social_icons {
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+        }
+</style>

@@ -1,0 +1,19 @@
+---
+import { Image } from 'astro:assets';
+import SporaHero  from '../../assets/images/spora_hero.png'
+import HomeText from './HomeText.astro';
+
+const { title, text, textButton } = Astro.props;
+
+---
+<div class="hero_image">
+    
+    <HomeText 
+		title = {title},
+		text = {text},
+		textButton = {textButton}
+	/>
+    
+    <Image src={SporaHero} alt="Spora Hero." class='spora_hero'/>
+    
+</div>
