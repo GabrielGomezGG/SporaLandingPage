@@ -1,147 +1,144 @@
 ---
-import { Image } from 'astro:assets';
-import MartinImage from '../../assets/images/martin_image.jpg';
-import DamianImage from '../../assets/images/damian_image.jpg';
-import GabrielImage from '../../assets/images/gabriel_image.jpg';
-import EliasImage from '../../assets/images/elias_image.jpg';
-import GastonImage from '../../assets/images/gaston_image.jpg';
-import FrancoImage from '../../assets/images/franco_image.jpg';
+import { Image } from "astro:assets";
+import MartinImage from "../../assets/images/martin_image.jpg";
+import GabrielImage from "../../assets/images/gabriel_image.jpg";
+import GastonImage from "../../assets/images/gaston_image.jpg";
+import EliasImage from "../../assets/images/elias_image.jpg";
+import DamianImage from "../../assets/images/damian_image.jpg";
+import FrancoImage from "../../assets/images/franco_image.jpg";
+import PreviewText from "../MinigamePreview/PreviewText.astro";
+
+
+const title = "Conocé a nuestro equipo";
+const text = "Nuestra filosofía es muy simple; crear grandes proyectos, pensar en buenas ideas y disfrutar el proceso.";
+
+const members = [
+    {
+        photo: MartinImage,
+        name: "Martín Albanesi",
+        social: {
+            linkedin: "https://www.linkedin.com/in/martin-albanesi/",
+            github: " https://github.com/MartinAlbanesi",
+        },
+    },
+    {
+        photo: GabrielImage,
+        name: "Gabriel Gomez",
+        social: {
+            linkedin: "https://www.linkedin.com/in/gabrielgomezgg/",
+            github: " https://github.com/GabrielGomezGG",
+        },
+    },
+    {
+        photo: GastonImage,
+        name: "Gastón Toledo",
+        social: {
+            linkedin: "https://www.linkedin.com/in/gastón-toledo-b921b6171/",
+            github: "https://github.com/gasToledo",
+        },
+    },
+    {
+        photo: EliasImage,
+        name: "Elías Rueda Arévalo",
+        social: {
+            linkedin:
+                "https://www.linkedin.com/in/elías-rueda-arévalo-8353b2211/",
+            github: "https://github.com/eliaasgabriel",
+        },
+    },
+    {
+        photo: DamianImage,
+        name: "Damian llopar",
+        social: {
+            linkedin: "https://www.linkedin.com/in/damian-llopar",
+            github: "https://github.com/dllopar",
+        },
+    },
+    {
+        photo: FrancoImage,
+        name: "Franco Mazaffra",
+        social: {
+            linkedin: "https://www.linkedin.com/in/francomazaffra/",
+            github: "https://github.com/FrancoMazaffra",
+        },
+    },
+];
 ---
 
-<section>
-    <div class="team-title">
-        <h1>Conocé a nuestro equipo</h1>
-        <p>Nuestra filosofía es muy simple; crear grandes proyectos, pensar en buenas ideas y disfrutar el proceso.</p>
-    </div>
-    <div class="team-cards">
-        <div class="team-card">
-            <div class="team-images">
-                <Image src={MartinImage} alt="Team Member" class="team-image"/>
-            </div>
-            <div class="team-detail">
-                <h3>Martín Albanesi</h3>
-                <p>Product Owner 2 | Documentación</p>
-            </div>
-        </div>
-        <div class="team-card">
-            <div class="team-images">
-                <Image src={DamianImage} alt="Team Member" class="team-image"/>
-            </div>
-            <div class="team-detail">
-                <h3>Damian llopar</h3>
-                <p>Diseñador | Product Owner</p>
-            </div>
-        </div>
-        <div class="team-card">
-            <div class="team-images">
-                <Image src={GabrielImage} alt="Team Member" class="team-image"/>
-            </div>
-            <div class="team-detail">
-                <h3>Gabriel Gomez</h3>
-                <p> Scrum Master | Documentación 
-                </p>
-            </div>
-        </div>
-        <div class="team-card">
-            <div class="team-images">
-                <Image src={EliasImage} alt="Team Member" class="team-image"/>
-            </div>
-            <div class="team-detail">
-                <h3>Elías Rueda Arévalo</h3>
-                <p>Scrum Master 2 | Documentación | Diseñador</p>
-            </div>
-        </div>
-        <div class="team-card">
-            <div class="team-images">
-                <Image src={GastonImage} alt="Team Member" class="team-image"/>
-            </div>
-            <div class="team-detail">
-                <h3>Gastón Toledo</h3>
-                <p>Diseñador | Investigador</p>
-            </div>
-        </div>
-        <div class="team-card">
-            <div class="team-images">
-                <Image src={FrancoImage} alt="Team Member" class="team-image"/>
-            </div>
-            <div class="team-detail">
-                <h3>Franco Mazaffra</h3>
-                <p>Investigador</p>
-            </div>
-        </div>
-    </div>
-</section>
+<div class="section_four" id="section_four">
 
+    <PreviewText
+		title = {title},
+		text = {text}
+	/>
+
+    <div class="team_card">
+
+        {
+            members.map((member) => {
+                return <div class="team_card_item">
+                <Image src={member.photo} alt={member.name} class="team_card_img"/>
+                <h2>{member.name}</h2>
+                <div class="social_row">
+                    <a href={member.social.linkedin} target="_blank">
+                        <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/circle-linkedin-512.png" alt="linkedin" class="social_icon">
+                    </a>
+                    <a href={member.social.github} target="_blank">
+                        <img src="https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-512.png" alt="github" class="social_icon">
+                    </a>
+                </div>
+            </div>
+        })
+    }
+    </div>
+</div>
 
 <style>
+    .section_four {
+        background-color: hsl(190, 50%, 49%);
+        padding: 50px 80px;
 
-    .team-title h1 {
-        font-size: 100px;
-        text-align: center;
-        position:relative;
-    }
-    
-    .team-title p {
-        font-size: 30px;
-        text-align: center;
-        margin-bottom: 80px;
-        margin-left: auto;
-        margin-right: auto;
-        width: 70%;
-    }
 
-    .team-cards {
-        height: auto;
-        width:100%;
-        display: flex;
-        justify-content: space-between;
-        margin: 20px auto;
-    }
+        a{
+            text-decoration: none;
+        }
 
-    .team-card {
-        background-color: aqua;
-        border-radius: 50px;
-        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-        margin: 0px 20px;
-        padding: 20px;
-        text-align: center;
-        transition: transform 0.6s ease;
-        width:calc(33.33% - 20px);
-    }
+        .team_card{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 16px;
+            justify-items: center;
+            padding:1rem;
+        }
 
-    .team-card:hover {
-        transform: translateY(-12px);
-        transition: all 0.3s;
-    }
-
-    .team-image{
-        border-radius: 50%;
-        height: 300px;
-        width: 300px;
-        object-fit: cover;
-        margin-bottom: 10px;
-    }
-
-    .team-detail h3{
-        font-size: 36px;
-        margin: 15px 0;
-    }
-
-    .team-detail p{
-        font-size: 24px;
-        margin: 0;
-    }
-
-    @media screen and (max-width: 768px) {
-        .team-cards {
+        .team_card_item{
             display: flex;
             flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            background-color: hsl(33, 92%, 60%);
+            width: 300px;
+            border-radius: 28px;
+            padding: 1rem;
         }
 
-        .team-card {
-            width: 85%;
-            margin: 25px auto;
+        .team_card_img{
+            border-radius: 50%;
+            width: 240px;
+            height: 240px;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .social_icon{
+            width: 48px;
+            height: 48px;
         }
     }
 
+    @media screen and (max-width: 636px) {
+        .section_four{
+            padding: 16px;
+        }
+    }
 </style>
