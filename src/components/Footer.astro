@@ -1,21 +1,49 @@
 ---
-import Social from "./Social.astro";
+import SocialIcons from "./Core/SocialIcons.astro";
+import Instagram  from '../assets/images/instagram_icon.webp'
+import X_Twitter  from '../assets/images/icon_twiter.png'
+import Champy from '../assets/images/logo_spora.png'
+import Image from "astro/components/Image.astro";
 
-const platform = "github";
-const username = "withastro";
+const socialLinks = [
+  {
+    icon: Instagram,
+    url: "https://www.instagram.com/proyecto.spora/",
+    name: "Instagram",
+  },
+  {
+    icon: X_Twitter,
+    url: "https://www.instagram.com/proyecto.spora/",
+    name: "Twitter",
+  },
+];
 ---
 
-<footer>
-  <p>¡Más información sobre mis proyectos en <a href={`https://www.${platform}.com/${username}`}>{platform}</a>!</p>
-  <Social platform="twitter" username="astrodotbuild" />
-  <Social platform="github" username="withastro" />
-  <Social platform="youtube" username="astrodotbuild" />
+<footer class="footer">
+  <div class="logo">
+    <Image src={Champy} alt="Logo de Spora" />
+  </div>
+  <div class="about_us">
+    <h2>Sobre nosotros</h2>
+    Somos un grupo de estudiantes de la Universidad Nacional de La Matanza, que decidimos unirnos para llevar a cabo un proyecto que nos apasiona. ¡Esperamos que disfrutes de la experiencia!
+  </div>
+  <div class="social">
+    {
+      <h2>Siguenos</h2>
+      <SocialIcons socialLinks={socialLinks} />
+    }
+  </div>
 </footer>
 
 <style>
-    footer {
-      display: flex;
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-  </style>
+  footer {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 16px;
+      justify-items: left;
+      background-color: #333333;
+      color: white;
+      gap: 2rem;
+      padding: 2rem
+  }
+</style>
