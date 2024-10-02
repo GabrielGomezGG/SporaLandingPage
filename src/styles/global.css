@@ -7,9 +7,24 @@
 body {
   margin: 0;
   padding: 0;
-  height: 100vh; /* Ensures the body takes full viewport height */
   font-family: Arial, sans-serif;
-  overflow: hidden;
+  background: linear-gradient(to bottom, #f58c0a, hsl(33, 92%, 70%)); /* Degradado de arriba hacia abajo */
+}
+
+h1 {
+  font-size: 3.4rem;
+  /* margin-bottom: 1rem; */
+  color: var(--primary10);
+  text-align: center;
+  -webkit-text-stroke: 2px white;
+}
+
+p {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  /* color: var(--primary10); */
+  color:black;
+  text-align: center;
 }
 
 @media screen and (max-width: 636px) {
@@ -17,6 +32,9 @@ body {
       display: none;
   }
   .spora_hero_img{
+    display: none;
+  }
+  .minigame_preview_img{
     display: none;
   }
 }
@@ -70,7 +88,7 @@ body {
   ## Spora with Hand Image
 */
 
-.spora_hero {
+/* .spora_hero {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -78,36 +96,26 @@ body {
   height: 100vh;
   max-width: 100%;
   max-height: 100%;
-}
+} */
 
-.hero_image{
+/* .hero_image{
   position: relative;
   display: grid;
   grid-template-columns: 2fr 1fr;
   align-items: center;
   height: 100vh;
   width: 100%;
-}
+} */
 
 
-@media only screen and (max-width: 768px) {
-  .hero_image{
-    display: grid;
-    grid-template-columns: 1fr;
-    align-items: center;
-    }
 
-  .spora_hero {
-  display: none; /* Oculta el div cuando el ancho de la pantalla es igual o menor a 768px */
-  }
-}
 
 
 /*
   ## Minigame Preview
 */
 
-.minigame_preview {
+/* .minigame_preview {
   position: relative;
   top: 30px;
   left: 0;
@@ -117,23 +125,23 @@ body {
   max-height: 100%;
   background-image: url('src/assets/images/minigame_background.png');
   background-size: cover;
-}
+} */
 
-.minigame_image{
+/* .minigame_image{
   display: grid;
   grid-template-columns: 1fr 2fr;
   align-items: center;
   height: 100vh;
   width: 100%;
   background-color: #F58C0A;
-}
+} */
 
 
 /*
   ## Challenge Preview
 */
 
-.challenge_preview {
+/* .challenge_preview {
   position: absolute;
   top: 30px;
   right: 0;
@@ -143,16 +151,16 @@ body {
   max-height: 100%;
   background-image: url('src/assets/images/challenge_background.png');
   background-size: cover;
-}
+} */
 
-.challenge_image {
+/* .challenge_image {
   position: relative;
   display: grid;
   grid-template-columns: 2fr 1fr;
   align-items: center;
   height: 100vh;
   width: 100%;
-}
+} */
 
 
 /*
