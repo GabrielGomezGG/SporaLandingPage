@@ -1,18 +1,56 @@
 ---
 import { Image } from 'astro:assets';
 import MinigameDevice  from '../../assets/images/minigame_device.png'
+import BackgroundImage from "../../assets/images/background_bosque.png"
 import PreviewText from './PreviewText.astro';
 
 const { title, text} = Astro.props;
 
 ---
-<div class="minigame_image">
-    
-    <Image src={MinigameDevice} alt="Preview Image" class='minigame_preview'/>
-
-    <PreviewText
+<div class="section_two" id="section_two">
+	
+	<Image src={MinigameDevice} alt="Preview Image" class='minigame_preview_img'/>
+	<PreviewText
 		title = {title},
 		text = {text}
 	/>
-    
 </div>
+
+<style>
+	.section_two {
+		height: 100vh;
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+		align-items: center;
+		padding: 0px 120px;
+	}
+	
+	.minigame_preview_img{
+		width: 300px;
+		height: 600px;
+	}
+
+	/* .images_section_two{
+		position: relative;
+		width: 500px;
+		height: 300px;
+
+		.background_image{
+			width: 100%;
+  			height: 100%;
+		}
+		.minigame_preview_img{
+			
+		}
+	} */
+	
+	
+
+	@media screen and (max-width: 636px) {
+		.section_two{
+			display: flex;;
+			flex-direction: column-reverse;
+		}
+
+	}
+</style>
