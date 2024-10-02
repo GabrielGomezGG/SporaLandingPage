@@ -1,19 +1,32 @@
 ---
 import '../styles/global.css';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import HeroImage from '../components/HeroImage/HeroImage.astro';
+import HeroImage from '../components/HeroImage/HeroPreview.astro';
+import MinigameImage from '../components/MinigamePreview/MinigamePreview.astro';
+import ChallengePreview from '../components/ChallengePreview/ChallengePreview.astro';
+import OurTeam from '../components/OurTeam/OurTeam.astro';
 const pageTitle = "Página de inicio";
 
 const homeText = {
 	title: "¡Comenzá tu aventura ahora!",
-	text: "Jugá, aprendé y conocé más sobre los riesgos de la contaminación y las diferentes maneras de cuidar el medio ambiente.",
+	text: "Jugá diferentes minijuegos, enfrentá desafíos y aprendé sobre el medio ambiente y la contaminación. Competí en un ranking contra otros jugadores para ver quién es el mejor.",
 	textButton: "Descargalo ahora"
+}
+
+const minigamePreviewText = {
+	title: "¡Jugá y aprendé!",
+	text: "Divertite completando los minijuegos que vas a encontrar a lo largo de tu aventura junto a Champy"
+}
+
+const challengePreviewText = {
+	title: "¡Enfrentá difíciles desafíos!",
+	text: "Para superar cada área y avanzar hacia la siguiente vas a tener que enfrentarte a desafíos que te van a poner a prueba. ¡Demostrá que podés superarlos!"
 }
 
 ---
 <BaseLayout pageTitle={pageTitle}>
 	<div class="parent">
-		<div class="child">
+		<div id="section-1" class="child">
 			<HeroImage 
 			title = {homeText.title},
 			text = {homeText.text},
@@ -21,17 +34,27 @@ const homeText = {
 			/>
 		</div>
 		
-	  <div class="child">and</div>
+	  	<div id="section-2" class="child">
+			<MinigameImage
+			title = {minigamePreviewText.title},
+			text = {minigamePreviewText.text}
+			/>
+	  	</div>
 		
-	  <div class="child">
-		<div>
-		  <code>scroll-snap-align</code><br />
-		  on its child elements
+	  	<div id="section-3" class="child">
+			<ChallengePreview
+			title = {challengePreviewText.title},
+			text = {challengePreviewText.text}
+			/>
+	  	</div>
+		
+	  	<div id="section-4" class="child">
+			<OurTeam />
 		</div>
-	  </div>
 		
-	  <div class="child">to get a really cool snapping effect - with CSS only!</div>
-		
-	  <div class="child">(works even in the IE!)</div>
+	  	<div id="section-5" class="child">
+			<h1>Contacto</h1>
+			<!-- ULTIMA SECCIÓN -->
+		</div>
 	</div>
 </BaseLayout>

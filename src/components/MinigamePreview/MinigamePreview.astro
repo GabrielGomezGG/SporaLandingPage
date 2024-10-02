@@ -1,0 +1,18 @@
+---
+import { Image } from 'astro:assets';
+import MinigameDevice  from '../../assets/images/minigame_device.png'
+import PreviewText from './PreviewText.astro';
+
+const { title, text} = Astro.props;
+
+---
+<div class="minigame_image">
+    
+    <Image src={MinigameDevice} alt="Preview Image" class='minigame_preview'/>
+
+    <PreviewText
+		title = {title},
+		text = {text}
+	/>
+    
+</div>

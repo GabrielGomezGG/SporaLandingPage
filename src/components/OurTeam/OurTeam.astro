@@ -1,0 +1,147 @@
+---
+import { Image } from 'astro:assets';
+import MartinImage from '../../assets/images/martin_image.jpg';
+import DamianImage from '../../assets/images/damian_image.jpg';
+import GabrielImage from '../../assets/images/gabriel_image.jpg';
+import EliasImage from '../../assets/images/elias_image.jpg';
+import GastonImage from '../../assets/images/gaston_image.jpg';
+import FrancoImage from '../../assets/images/franco_image.jpg';
+---
+
+<section>
+    <div class="team-title">
+        <h1>Conocé a nuestro equipo</h1>
+        <p>Nuestra filosofía es muy simple; crear grandes proyectos, pensar en buenas ideas y disfrutar el proceso.</p>
+    </div>
+    <div class="team-cards">
+        <div class="team-card">
+            <div class="team-images">
+                <Image src={MartinImage} alt="Team Member" class="team-image"/>
+            </div>
+            <div class="team-detail">
+                <h3>Martín Albanesi</h3>
+                <p>Product Owner 2 | Documentación</p>
+            </div>
+        </div>
+        <div class="team-card">
+            <div class="team-images">
+                <Image src={DamianImage} alt="Team Member" class="team-image"/>
+            </div>
+            <div class="team-detail">
+                <h3>Damian llopar</h3>
+                <p>Diseñador | Product Owner</p>
+            </div>
+        </div>
+        <div class="team-card">
+            <div class="team-images">
+                <Image src={GabrielImage} alt="Team Member" class="team-image"/>
+            </div>
+            <div class="team-detail">
+                <h3>Gabriel Gomez</h3>
+                <p> Scrum Master | Documentación 
+                </p>
+            </div>
+        </div>
+        <div class="team-card">
+            <div class="team-images">
+                <Image src={EliasImage} alt="Team Member" class="team-image"/>
+            </div>
+            <div class="team-detail">
+                <h3>Elías Rueda Arévalo</h3>
+                <p>Scrum Master 2 | Documentación | Diseñador</p>
+            </div>
+        </div>
+        <div class="team-card">
+            <div class="team-images">
+                <Image src={GastonImage} alt="Team Member" class="team-image"/>
+            </div>
+            <div class="team-detail">
+                <h3>Gastón Toledo</h3>
+                <p>Diseñador | Investigador</p>
+            </div>
+        </div>
+        <div class="team-card">
+            <div class="team-images">
+                <Image src={FrancoImage} alt="Team Member" class="team-image"/>
+            </div>
+            <div class="team-detail">
+                <h3>Franco Mazaffra</h3>
+                <p>Investigador</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<style>
+
+    .team-title h1 {
+        font-size: 100px;
+        text-align: center;
+        position:relative;
+    }
+    
+    .team-title p {
+        font-size: 30px;
+        text-align: center;
+        margin-bottom: 80px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 70%;
+    }
+
+    .team-cards {
+        height: auto;
+        width:100%;
+        display: flex;
+        justify-content: space-between;
+        margin: 20px auto;
+    }
+
+    .team-card {
+        background-color: aqua;
+        border-radius: 50px;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+        margin: 0px 20px;
+        padding: 20px;
+        text-align: center;
+        transition: transform 0.6s ease;
+        width:calc(33.33% - 20px);
+    }
+
+    .team-card:hover {
+        transform: translateY(-12px);
+        transition: all 0.3s;
+    }
+
+    .team-image{
+        border-radius: 50%;
+        height: 300px;
+        width: 300px;
+        object-fit: cover;
+        margin-bottom: 10px;
+    }
+
+    .team-detail h3{
+        font-size: 36px;
+        margin: 15px 0;
+    }
+
+    .team-detail p{
+        font-size: 24px;
+        margin: 0;
+    }
+
+    @media screen and (max-width: 768px) {
+        .team-cards {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .team-card {
+            width: 85%;
+            margin: 25px auto;
+        }
+    }
+
+</style>
