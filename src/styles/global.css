@@ -19,6 +19,13 @@ h1 {
   -webkit-text-stroke: 0.1vw white;
 }
 
+h2 {
+  font-size: 1.4vw;
+  margin-bottom: 0.5vw;
+  color: var(--primary10);
+  text-align: center;
+}
+
 p {
   font-size: 1vw;
   margin-bottom: 3vw;
