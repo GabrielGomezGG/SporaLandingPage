@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import ChallengeDevice  from '../../assets/images/challenge_device.png'
+import ChallengeBackground  from '../../assets/images/background_lago.png'
 import PreviewText from '../MinigamePreview/PreviewText.astro';
 
 const { title, text} = Astro.props;
@@ -12,7 +13,7 @@ const { title, text} = Astro.props;
 		title = {title},
 		text = {text}
 	/>
-
+	<Image src={ChallengeBackground} alt="Background Image" class='challenge_background'/>
 	<Image src={ChallengeDevice} alt="Preview Image" class='challenge_preview'/>
     
 </div>
@@ -22,14 +23,26 @@ const { title, text} = Astro.props;
 		display: grid;
 		grid-template-columns: 2fr 1fr;
 		align-items: center;
-		padding: 0px 120px;
+		height: 100vh;
+		margin-right: 6vw;
+		padding: 4vw;
 	}
 
 	.challenge_preview{
-		width: 300px;
-		height: 600px;
-
+		position: absolute;
+		width: auto;
+		height: 70vh;
+		right: 2vw;
 	}
+
+	.challenge_background{
+		position: absolute;
+		width: auto;
+		height: 95vh;
+		right: 0;
+		overflow: hidden;
+	}
+
 	@media screen and (max-width: 636px) {
 		.section_three{
 			display: flex;
